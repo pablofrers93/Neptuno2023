@@ -171,25 +171,6 @@ namespace Neptuno2022EF.Windows
         Func<Producto, bool> predicado;
         private void tsbFiltrar_Click(object sender, EventArgs e)
         {
-            //frmSeleccionarCategoria frm = new frmSeleccionarCategoria() { Text = "Seleccionar País y Ciudad" };
-            //DialogResult dr = frm.ShowDialog(this);
-            //if (dr == DialogResult.Cancel) { return; }
-            //try
-            //{
-            //    Categoria categoria = frm.GetCategoria();
-
-            //    lista = _servicio.GetProductos(categoria.CategoriaId);
-
-            //    MostrarDatosEnGrilla();
-            //    tsbFiltrar.BackColor = Color.Orange;
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
-            
-
         }
 
         private void tsbActualizar_Click(object sender, EventArgs e)
@@ -239,9 +220,6 @@ namespace Neptuno2022EF.Windows
             {
                 var categoriaSeleccionado = frm.GetCategoria();
                 predicado = c => c.CategoriaId == categoriaSeleccionado.CategoriaId;
-                //lista = _servicio.Filtrar(predicado);
-                //lista = _servicio.GetCiudades(paisSeleccionado.PaisId);
-                //MostrarDatosEnGrilla();
                 filtroOn = true;
                 RecargarGrilla();
                 tsbFiltrar.BackColor = Color.Orange;
@@ -255,7 +233,27 @@ namespace Neptuno2022EF.Windows
 
         private void tsbFiltrar_ButtonClick(object sender, EventArgs e)
         {
+            
+        }
 
+        private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarProveedor frm = new frmSeleccionarProveedor() { Text = "Seleccionar..." };
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel) { return; }
+            try
+            {
+                var proveedorSeleccionado = frm.GetProveedor();
+                predicado = c => c.ProveedorId == proveedorSeleccionado.ProveedorId;
+                filtroOn = true;
+                RecargarGrilla();
+                tsbFiltrar.BackColor = Color.Orange;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

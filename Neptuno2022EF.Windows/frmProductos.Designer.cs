@@ -400,6 +400,7 @@
             this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
             this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.proveedoresToolStripMenuItem1.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem1.Click += new System.EventHandler(this.proveedoresToolStripMenuItem1_Click);
             // 
             // suspendidosToolStripMenuItem
             // 

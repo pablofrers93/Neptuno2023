@@ -185,6 +185,12 @@
     <Compile Include="frmSeleccionarPaisCiudad.Designer.cs">
       <DependentUpon>frmSeleccionarPaisCiudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarProveedor.Designer.cs">
+      <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentaAE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarPaisCiudad.resx">
       <DependentUpon>frmSeleccionarPaisCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarProveedor.resx">
+      <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentaAE.resx">
       <DependentUpon>frmVentaAE.cs</DependentUpon>
