@@ -8,6 +8,7 @@ using Neptuno2022EF.Entidades.Dtos.Venta;
 using Neptuno2022EF.Entidades.Entidades;
 using Neptuno2022EF.Windows.Classes;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Neptuno2022EF.Windows.Helpers
@@ -70,7 +71,15 @@ namespace Neptuno2022EF.Windows.Helpers
                 case ProductoListDto producto:
                     r.Cells[0].Value = producto.NombreProducto;
                     r.Cells[1].Value = producto.Categoria;
-                    r.Cells[2].Value = producto.PrecioUnitario;
+                    if (producto.UnidadesDisponibles == 0)
+                    {
+                        r.Cells[0].Style.BackColor = Color.Red;
+                        r.Cells[1].Style.BackColor = Color.Red;
+                        r.Cells[2].Style.BackColor = Color.Red;
+                        r.Cells[3].Style.BackColor = Color.Red;
+                        r.Cells[4].Style.BackColor = Color.Red;
+                    }
+                    r.Cells[2].Value = producto.UnidadesDisponibles;
                     r.Cells[3].Value = producto.UnidadesDisponibles;
                     r.Cells[4].Value = producto.Suspendido;
                     break;
