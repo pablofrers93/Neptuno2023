@@ -188,25 +188,7 @@ namespace Neptuno2022EF.Windows
 
             //    throw;
             //}
-            frmSeleccionarCategoria frm = new frmSeleccionarCategoria() { Text = "Seleccionar..." };
-            DialogResult dr = frm.ShowDialog(this);
-            if (dr == DialogResult.Cancel) { return; }
-            try
-            {
-                var categoriaSeleccionado = frm.GetCategoria();
-                predicado = c => c.CategoriaId == categoriaSeleccionado.CategoriaId;
-                //lista = _servicio.Filtrar(predicado);
-                //lista = _servicio.GetCiudades(paisSeleccionado.PaisId);
-                //MostrarDatosEnGrilla();
-                filtroOn = true;
-                RecargarGrilla();
-                tsbFiltrar.BackColor = Color.Orange;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            
 
         }
 
@@ -246,6 +228,34 @@ namespace Neptuno2022EF.Windows
         {
             paginaActual = 1;
             MostrarPaginado();
+        }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarCategoria frm = new frmSeleccionarCategoria() { Text = "Seleccionar..." };
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel) { return; }
+            try
+            {
+                var categoriaSeleccionado = frm.GetCategoria();
+                predicado = c => c.CategoriaId == categoriaSeleccionado.CategoriaId;
+                //lista = _servicio.Filtrar(predicado);
+                //lista = _servicio.GetCiudades(paisSeleccionado.PaisId);
+                //MostrarDatosEnGrilla();
+                filtroOn = true;
+                RecargarGrilla();
+                tsbFiltrar.BackColor = Color.Orange;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void tsbFiltrar_ButtonClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

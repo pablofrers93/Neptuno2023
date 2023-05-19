@@ -51,12 +51,15 @@
             this.tsbBorrar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbFiltrar = new System.Windows.Forms.ToolStripButton();
             this.tsbActualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
+            this.tsbFiltrar = new System.Windows.Forms.ToolStripSplitButton();
+            this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.suspendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.panelInferior.SuspendLayout();
@@ -68,7 +71,7 @@
             this.panelGrilla.Controls.Add(this.dgvDatos);
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Location = new System.Drawing.Point(0, 59);
-            this.panelGrilla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelGrilla.Margin = new System.Windows.Forms.Padding(4);
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(1067, 421);
             this.panelGrilla.TabIndex = 11;
@@ -86,7 +89,7 @@
             this.colSuspendido});
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(0, 0);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDatos.MultiSelect = false;
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
@@ -157,7 +160,7 @@
             this.panelInferior.Controls.Add(this.label1);
             this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInferior.Location = new System.Drawing.Point(0, 480);
-            this.panelInferior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelInferior.Margin = new System.Windows.Forms.Padding(4);
             this.panelInferior.Name = "panelInferior";
             this.panelInferior.Size = new System.Drawing.Size(1067, 74);
             this.panelInferior.TabIndex = 10;
@@ -166,7 +169,7 @@
             // 
             this.btnUltimo.Image = global::Neptuno2022EF.Windows.Properties.Resources.last_24px;
             this.btnUltimo.Location = new System.Drawing.Point(689, 16);
-            this.btnUltimo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUltimo.Margin = new System.Windows.Forms.Padding(4);
             this.btnUltimo.Name = "btnUltimo";
             this.btnUltimo.Size = new System.Drawing.Size(100, 39);
             this.btnUltimo.TabIndex = 39;
@@ -177,7 +180,7 @@
             // 
             this.btnSiguiente.Image = global::Neptuno2022EF.Windows.Properties.Resources.next_24px;
             this.btnSiguiente.Location = new System.Drawing.Point(581, 16);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(4);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 39);
             this.btnSiguiente.TabIndex = 40;
@@ -188,7 +191,7 @@
             // 
             this.btnAnterior.Image = global::Neptuno2022EF.Windows.Properties.Resources.previous_24px;
             this.btnAnterior.Location = new System.Drawing.Point(473, 16);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(100, 39);
             this.btnAnterior.TabIndex = 41;
@@ -199,7 +202,7 @@
             // 
             this.btnPrimero.Image = global::Neptuno2022EF.Windows.Properties.Resources.first_24px;
             this.btnPrimero.Location = new System.Drawing.Point(365, 16);
-            this.btnPrimero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrimero.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrimero.Name = "btnPrimero";
             this.btnPrimero.Size = new System.Drawing.Size(100, 39);
             this.btnPrimero.TabIndex = 42;
@@ -327,17 +330,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 59);
             // 
-            // tsbFiltrar
-            // 
-            this.tsbFiltrar.Image = global::Neptuno2022EF.Windows.Properties.Resources.filter_32px;
-            this.tsbFiltrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbFiltrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbFiltrar.Name = "tsbFiltrar";
-            this.tsbFiltrar.Size = new System.Drawing.Size(51, 56);
-            this.tsbFiltrar.Text = "Filtrar";
-            this.tsbFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbFiltrar.Click += new System.EventHandler(this.tsbFiltrar_Click);
-            // 
             // tsbActualizar
             // 
             this.tsbActualizar.Image = global::Neptuno2022EF.Windows.Properties.Resources.restart_32px;
@@ -380,6 +372,41 @@
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
+            // tsbFiltrar
+            // 
+            this.tsbFiltrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosToolStripMenuItem1,
+            this.proveedoresToolStripMenuItem1,
+            this.suspendidosToolStripMenuItem});
+            this.tsbFiltrar.Image = global::Neptuno2022EF.Windows.Properties.Resources.filter_32px;
+            this.tsbFiltrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbFiltrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFiltrar.Name = "tsbFiltrar";
+            this.tsbFiltrar.Size = new System.Drawing.Size(66, 56);
+            this.tsbFiltrar.Text = "Filtrar";
+            this.tsbFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbFiltrar.ButtonClick += new System.EventHandler(this.tsbFiltrar_ButtonClick);
+            this.tsbFiltrar.Click += new System.EventHandler(this.tsbFiltrar_Click);
+            // 
+            // productosToolStripMenuItem1
+            // 
+            this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.productosToolStripMenuItem1.Text = "Categoria";
+            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
+            // 
+            // proveedoresToolStripMenuItem1
+            // 
+            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.proveedoresToolStripMenuItem1.Text = "Proveedores";
+            // 
+            // suspendidosToolStripMenuItem
+            // 
+            this.suspendidosToolStripMenuItem.Name = "suspendidosToolStripMenuItem";
+            this.suspendidosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.suspendidosToolStripMenuItem.Text = "Suspendidos";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,7 +415,7 @@
             this.Controls.Add(this.panelGrilla);
             this.Controls.Add(this.panelInferior);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProductos";
             this.Text = "frmProductos";
             this.Load += new System.EventHandler(this.frmProveedores_Load);
@@ -422,7 +449,6 @@
         private System.Windows.Forms.ToolStripButton tsbBorrar;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tsbFiltrar;
         private System.Windows.Forms.ToolStripButton tsbActualizar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsbImprimir;
@@ -434,5 +460,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSuspendido;
+        private System.Windows.Forms.ToolStripSplitButton tsbFiltrar;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem suspendidosToolStripMenuItem;
     }
 }
