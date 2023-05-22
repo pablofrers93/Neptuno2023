@@ -34,6 +34,11 @@
             System.Windows.Forms.Label cityLabel;
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgDatos = new System.Windows.Forms.DataGridView();
+            this.cmnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmnMovimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmnDebe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmnHaber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnIngresarPago = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,15 +47,9 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtProvincia = new System.Windows.Forms.TextBox();
             this.txtCP = new System.Windows.Forms.TextBox();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumeroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmnMovimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmnDebe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmnHaber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nameLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             address1Label = new System.Windows.Forms.Label();
@@ -131,6 +130,46 @@
             this.dgDatos.Size = new System.Drawing.Size(932, 465);
             this.dgDatos.TabIndex = 1;
             this.dgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentClick);
+            // 
+            // cmnFecha
+            // 
+            this.cmnFecha.HeaderText = "Fecha";
+            this.cmnFecha.MinimumWidth = 6;
+            this.cmnFecha.Name = "cmnFecha";
+            this.cmnFecha.ReadOnly = true;
+            this.cmnFecha.Width = 125;
+            // 
+            // colNumeroFactura
+            // 
+            this.colNumeroFactura.HeaderText = "Numero Factura";
+            this.colNumeroFactura.MinimumWidth = 6;
+            this.colNumeroFactura.Name = "colNumeroFactura";
+            this.colNumeroFactura.ReadOnly = true;
+            this.colNumeroFactura.Width = 125;
+            // 
+            // cmnMovimiento
+            // 
+            this.cmnMovimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cmnMovimiento.HeaderText = "Movimiento";
+            this.cmnMovimiento.MinimumWidth = 6;
+            this.cmnMovimiento.Name = "cmnMovimiento";
+            this.cmnMovimiento.ReadOnly = true;
+            // 
+            // cmnDebe
+            // 
+            this.cmnDebe.HeaderText = "Debe";
+            this.cmnDebe.MinimumWidth = 6;
+            this.cmnDebe.Name = "cmnDebe";
+            this.cmnDebe.ReadOnly = true;
+            this.cmnDebe.Width = 125;
+            // 
+            // cmnHaber
+            // 
+            this.cmnHaber.HeaderText = "Haber";
+            this.cmnHaber.MinimumWidth = 6;
+            this.cmnHaber.Name = "cmnHaber";
+            this.cmnHaber.ReadOnly = true;
+            this.cmnHaber.Width = 125;
             // 
             // btnIngresarPago
             // 
@@ -222,28 +261,18 @@
             this.txtCP.TabIndex = 26;
             this.txtCP.TabStop = false;
             // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(13, 721);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(120, 62);
-            this.btnOK.TabIndex = 83;
-            this.btnOK.Text = "OK";
-            this.btnOK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(464, 721);
+            this.btnCancelar.Location = new System.Drawing.Point(1014, 307);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 62);
+            this.btnCancelar.Size = new System.Drawing.Size(151, 75);
             this.btnCancelar.TabIndex = 84;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtSaldo
             // 
@@ -264,52 +293,11 @@
             this.label3.TabIndex = 85;
             this.label3.Text = "Saldo:";
             // 
-            // cmnFecha
-            // 
-            this.cmnFecha.HeaderText = "Fecha";
-            this.cmnFecha.MinimumWidth = 6;
-            this.cmnFecha.Name = "cmnFecha";
-            this.cmnFecha.ReadOnly = true;
-            this.cmnFecha.Width = 125;
-            // 
-            // colNumeroFactura
-            // 
-            this.colNumeroFactura.HeaderText = "Numero Factura";
-            this.colNumeroFactura.MinimumWidth = 6;
-            this.colNumeroFactura.Name = "colNumeroFactura";
-            this.colNumeroFactura.ReadOnly = true;
-            this.colNumeroFactura.Width = 125;
-            // 
-            // cmnMovimiento
-            // 
-            this.cmnMovimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmnMovimiento.HeaderText = "Movimiento";
-            this.cmnMovimiento.MinimumWidth = 6;
-            this.cmnMovimiento.Name = "cmnMovimiento";
-            this.cmnMovimiento.ReadOnly = true;
-            // 
-            // cmnDebe
-            // 
-            this.cmnDebe.HeaderText = "Debe";
-            this.cmnDebe.MinimumWidth = 6;
-            this.cmnDebe.Name = "cmnDebe";
-            this.cmnDebe.ReadOnly = true;
-            this.cmnDebe.Width = 125;
-            // 
-            // cmnHaber
-            // 
-            this.cmnHaber.HeaderText = "Haber";
-            this.cmnHaber.MinimumWidth = 6;
-            this.cmnHaber.Name = "cmnHaber";
-            this.cmnHaber.ReadOnly = true;
-            this.cmnHaber.Width = 125;
-            // 
             // frmDetalleCtaCte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 812);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.label3);
@@ -341,7 +329,6 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.TextBox txtCP;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label3;

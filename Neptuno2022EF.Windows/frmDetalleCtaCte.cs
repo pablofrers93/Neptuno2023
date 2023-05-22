@@ -105,5 +105,10 @@ namespace Neptuno2022EF.Windows
             var movimiento = (CtaCte)r.Tag;
             return movimiento.Debe > 0;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
