@@ -255,5 +255,21 @@ namespace Neptuno2022EF.Windows
                 throw;
             }
         }
+
+        private void suspendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                predicado = c => c.Suspendido == true;
+                filtroOn = true;
+                RecargarGrilla();
+                tsbFiltrar.BackColor = Color.Orange;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

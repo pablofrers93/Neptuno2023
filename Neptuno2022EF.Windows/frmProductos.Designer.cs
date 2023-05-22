@@ -51,15 +51,15 @@
             this.tsbBorrar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbFiltrar = new System.Windows.Forms.ToolStripSplitButton();
+            this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.suspendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbActualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
-            this.tsbFiltrar = new System.Windows.Forms.ToolStripSplitButton();
-            this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.suspendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.panelInferior.SuspendLayout();
@@ -330,6 +330,43 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 59);
             // 
+            // tsbFiltrar
+            // 
+            this.tsbFiltrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosToolStripMenuItem1,
+            this.proveedoresToolStripMenuItem1,
+            this.suspendidosToolStripMenuItem});
+            this.tsbFiltrar.Image = global::Neptuno2022EF.Windows.Properties.Resources.filter_32px;
+            this.tsbFiltrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbFiltrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbFiltrar.Name = "tsbFiltrar";
+            this.tsbFiltrar.Size = new System.Drawing.Size(66, 56);
+            this.tsbFiltrar.Text = "Filtrar";
+            this.tsbFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbFiltrar.ButtonClick += new System.EventHandler(this.tsbFiltrar_ButtonClick);
+            this.tsbFiltrar.Click += new System.EventHandler(this.tsbFiltrar_Click);
+            // 
+            // productosToolStripMenuItem1
+            // 
+            this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.productosToolStripMenuItem1.Text = "Categoria";
+            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
+            // 
+            // proveedoresToolStripMenuItem1
+            // 
+            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.proveedoresToolStripMenuItem1.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem1.Click += new System.EventHandler(this.proveedoresToolStripMenuItem1_Click);
+            // 
+            // suspendidosToolStripMenuItem
+            // 
+            this.suspendidosToolStripMenuItem.Name = "suspendidosToolStripMenuItem";
+            this.suspendidosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.suspendidosToolStripMenuItem.Text = "Suspendidos";
+            this.suspendidosToolStripMenuItem.Click += new System.EventHandler(this.suspendidosToolStripMenuItem_Click);
+            // 
             // tsbActualizar
             // 
             this.tsbActualizar.Image = global::Neptuno2022EF.Windows.Properties.Resources.restart_32px;
@@ -371,42 +408,6 @@
             this.tsbCerrar.Text = "Cerrar";
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
-            // 
-            // tsbFiltrar
-            // 
-            this.tsbFiltrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosToolStripMenuItem1,
-            this.proveedoresToolStripMenuItem1,
-            this.suspendidosToolStripMenuItem});
-            this.tsbFiltrar.Image = global::Neptuno2022EF.Windows.Properties.Resources.filter_32px;
-            this.tsbFiltrar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbFiltrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbFiltrar.Name = "tsbFiltrar";
-            this.tsbFiltrar.Size = new System.Drawing.Size(66, 56);
-            this.tsbFiltrar.Text = "Filtrar";
-            this.tsbFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbFiltrar.ButtonClick += new System.EventHandler(this.tsbFiltrar_ButtonClick);
-            this.tsbFiltrar.Click += new System.EventHandler(this.tsbFiltrar_Click);
-            // 
-            // productosToolStripMenuItem1
-            // 
-            this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
-            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.productosToolStripMenuItem1.Text = "Categoria";
-            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
-            // 
-            // proveedoresToolStripMenuItem1
-            // 
-            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
-            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.proveedoresToolStripMenuItem1.Text = "Proveedores";
-            this.proveedoresToolStripMenuItem1.Click += new System.EventHandler(this.proveedoresToolStripMenuItem1_Click);
-            // 
-            // suspendidosToolStripMenuItem
-            // 
-            this.suspendidosToolStripMenuItem.Name = "suspendidosToolStripMenuItem";
-            this.suspendidosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.suspendidosToolStripMenuItem.Text = "Suspendidos";
             // 
             // frmProductos
             // 
