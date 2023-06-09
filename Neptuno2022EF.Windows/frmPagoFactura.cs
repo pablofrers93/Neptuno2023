@@ -35,28 +35,36 @@ namespace Neptuno2022EF.Windows
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDecimal(ImporteText.Text) <= Convert.ToDecimal(txtSaldo.Text) && Convert.ToDecimal(ImporteText.Text)>0)
+            try
             {
-                ctaCte = new CtaCte()
+                if (Convert.ToDecimal(ImporteText.Text) <= Convert.ToDecimal(txtSaldo.Text) && Convert.ToDecimal(ImporteText.Text) > 0)
                 {
-                    CtaCteId = _movimiento.CtaCteId,
-                    ClienteId = _movimiento.ClienteId,
-                    NumeroFactura = _movimiento.NumeroFactura,
-                    Haber = Convert.ToDecimal(ImporteText.Text),
-                    Debe = _movimiento.Debe - Convert.ToDecimal(ImporteText.Text),
-                    Saldo = _movimiento.Debe - Convert.ToDecimal(ImporteText.Text),
-                    FechaMovimiento = DateTime.Now,
-                    Movimiento = "pago"
-                };
-                _servicio.Guardar(ctaCte);
-                DialogResult = DialogResult.OK;
-            }
-            else 
+                    ctaCte = new CtaCte()
+                    {
+                        CtaCteId = _movimiento.CtaCteId,
+                        ClienteId = _movimiento.ClienteId,
+                        NumeroFactura = _movimiento.NumeroFactura,
+                        Haber = Convert.ToDecimal(ImporteText.Text),
+                        Debe = _movimiento.Debe - Convert.ToDecimal(ImporteText.Text),
+                        Saldo = _movimiento.Debe - Convert.ToDecimal(ImporteText.Text),
+                        FechaMovimiento = DateTime.Now,
+                        Movimiento = "pago"
+                    };
+                    _servicio.Guardar(ctaCte);
+                    DialogResult = DialogResult.OK;
+                }
+                else
             if (Convert.ToDecimal(ImporteText.Text) > Convert.ToDecimal(txtSaldo.Text))
-            {
-                errorProvider1.SetError(ImporteText, "Importe no puede ser mayor");
+                {
+                    errorProvider1.SetError(ImporteText, "Importe no puede ser mayor");
+                }
+                else { errorProvider1.SetError(ImporteText, "Importe debe ser mayor a cero"); }
             }
-            else { errorProvider1.SetError(ImporteText, "Importe debe ser mayor a cero"); }
-        }
+            catch (Exception)
+            {
+                errorProvider1.SetError(ImporteText, "Debe ingresar un importe"); }
+                
+            }
+            
     }
 }

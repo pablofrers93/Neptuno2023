@@ -117,6 +117,7 @@ namespace Neptuno2022EF.Datos.Repositorios
             }
         }
         public List<CtaCte> GetCtaCtePorClienteId(int ctaCteClienteId)
+        
         {
             try
             {

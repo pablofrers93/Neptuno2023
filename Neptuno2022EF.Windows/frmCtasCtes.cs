@@ -41,13 +41,14 @@ namespace Neptuno2022EF.Windows
         {
             if (dgvDatos.SelectedRows.Count > 0)
             {
-                frmDetalleCtaCte frm = new frmDetalleCtaCte();
+                frmDetalleCtaCte frm = new frmDetalleCtaCte(_servicio);
                 frm.Text = "Detalle de Cta. Cte";
                 DataGridViewRow r = dgvDatos.CurrentRow;
                 var cta = (CtaCteResumen)r.Tag;
                 List<CtaCte> listaMovimientosCtaCte = _servicio.GetCtaCtePorClienteId(cta.ClienteId);
                 frm.SetCtaCte(listaMovimientosCtaCte);
                 DialogResult dr = frm.ShowDialog(this);
+                ActualizarGrilla();
             }
         }
 
@@ -95,10 +96,14 @@ namespace Neptuno2022EF.Windows
 
         private void tsbActualizar_Click(object sender, EventArgs e)
         {
+            ActualizarGrilla();
+        }
+
+        private void ActualizarGrilla()
+        {
             Helpers.GridHelper.LimpiarGrilla(dgvDatos);
             RecargarGrilla();
         }
-
         private void tsbCerrar_Click(object sender, EventArgs e)
         {
             Close();

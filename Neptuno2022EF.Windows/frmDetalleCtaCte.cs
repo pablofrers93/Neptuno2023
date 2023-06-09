@@ -69,8 +69,20 @@ namespace Neptuno2022EF.Windows
         {
             try
             {
-                //lista = _servicio.GetCtaCtes();
-                Helpers.FormHelper.MostrarDatosEnGrilla(dgDatos, lista);
+                lista = _servicio.GetCtaCtePorClienteId(cliente.Id);
+                //txtSaldo.Text = 
+                if (lista.Count > 0)
+                {
+                    Helpers.FormHelper.MostrarDatosEnGrilla(dgDatos, lista);
+                    var sumaHaber = 0m;
+                    var sumaDebe = 0m;
+                    foreach (var item in lista)
+                    {
+                        sumaDebe += item.Debe;
+                        sumaHaber += item.Haber;
+                    }
+                    txtSaldo.Text = (sumaDebe - sumaHaber).ToString();
+                }
             }
             catch (Exception)
             {
@@ -86,6 +98,7 @@ namespace Neptuno2022EF.Windows
                 frm.Text = "Pagar factura";
                 DataGridViewRow r = dgDatos.CurrentRow;
                 var movimiento = (CtaCte)r.Tag;
+
                 frm.setMovimiento(movimiento);
                 DialogResult dr = frm.ShowDialog(this);
                 RecargarGrilla();
